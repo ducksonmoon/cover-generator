@@ -1,2 +1,2 @@
-# cover-generator
+# 🦴 COVER GENERATOR
 Hih Hih
