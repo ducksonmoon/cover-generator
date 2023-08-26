@@ -7,10 +7,11 @@ body {
 .navigation {
   height: 70px;
   background: #fff;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .nav-container {
-  max-width: 1000px;
   margin: 0 auto;
 }
 

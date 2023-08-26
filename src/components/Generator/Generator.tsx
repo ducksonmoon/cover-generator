@@ -67,58 +67,67 @@ export default function Generator() {
   };
 
   return (
-    <main>
-      <Stack
-        direction="row"
-        sx={{
-          justifyContent: "space-between",
-          marginBottom: 2,
-          direction: "rtl",
-        }}
-      >
-        <Button
-          color="secondary"
-          size="medium"
-          variant="contained"
-          onClick={downloadResult}
+    <main
+      style={{
+        marginLeft: "5%",
+        marginRight: "5%",
+        borderRadius: '10px',
+        backgroundColor: "white",
+        padding: 16,
+      }}
+    >
+      <section>
+        <Stack
+          direction="row"
+          sx={{
+            justifyContent: "space-between",
+            marginBottom: 2,
+            direction: "rtl",
+          }}
         >
-          Download Result
-        </Button>
-      </Stack>
+          <Button
+            color="secondary"
+            size="medium"
+            variant="contained"
+            onClick={downloadResult}
+          >
+            Download Result
+          </Button>
+        </Stack>
 
-      <Grid container spacing={2} columns={16}>
-        <Grid item xs={8}>
-          <ColorPicker handleColorChange={setColor} />
+        <Grid container spacing={2} columns={16}>
+          <Grid item xs={8}>
+            <ColorPicker handleColorChange={setColor} />
+          </Grid>
+          <Grid item xs={8}>
+            <Stack direction="row" sx={{ justifyContent: "space-between" }}>
+              <SizePicker handlePlatformSize={setPlatformSize} />
+              <Button color="primary" size="large" component="label">
+                Upload Photo
+                <input
+                  type="file"
+                  name="myImage"
+                  onChange={handleImageChange}
+                  hidden
+                />
+              </Button>
+            </Stack>
+          </Grid>
         </Grid>
-        <Grid item xs={8}>
-          <Stack direction="row" sx={{ justifyContent: "space-between" }}>
-            <SizePicker handlePlatformSize={setPlatformSize} />
-            <Button color="primary" size="large" component="label">
-              Upload Photo
-              <input
-                type="file"
-                name="myImage"
-                onChange={handleImageChange}
-                hidden
-              />
-            </Button>
-          </Stack>
-        </Grid>
-      </Grid>
-      <TextField
-        label="Text"
-        variant="outlined"
-        value={textInput}
-        onChange={handleTextInputChange}
-        sx={{
-          width: "100%",
-          marginTop: 2,
-        }}
-      />
+        <TextField
+          label="Text"
+          variant="outlined"
+          value={textInput}
+          onChange={handleTextInputChange}
+          sx={{
+            width: "100%",
+            marginTop: 2,
+          }}
+        />
+      </section>
 
       <Box
         sx={{
-          width: "100%",
           border: "1px dashed grey",
           overflow: "scroll",
           boxShadow: 2,
